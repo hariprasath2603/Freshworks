@@ -1,5 +1,5 @@
 var countyName=localStorage.getItem('country');
-
+document.title=countyName;
 valueChange();
 async function valueChange(){
     
