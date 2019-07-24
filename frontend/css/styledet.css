@@ -68,7 +68,9 @@ h4{
         height:125px;
     }
     
-    
+    #logo{
+        text-align: center;
+    }
 }
 
 
@@ -81,5 +83,8 @@ h4{
         #root img{
             float: left;
             width:100%
+        }
+        #logo{
+            text-align: center;
         }
 }
