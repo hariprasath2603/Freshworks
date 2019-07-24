@@ -10,6 +10,11 @@ body{
     margin-right: 10%;
 }
 
+#logo{
+    font-family: 'Hanalei', cursive;
+    letter-spacing: 5px;
+}
+
 #main{
     
     margin-top:2%;
@@ -21,6 +26,9 @@ body{
     margin-top:5%;
     margin-bottom:5%;
     text-align: center;
+}
+h2{
+    margin-bottom: 2%;
 }
 
 #search{
@@ -60,11 +68,21 @@ cursor: pointer;
     background-color: white;
     height:250px;
     width:200px;
+    max-height:250px;
+    max-width:200px;
     color:black;
     box-shadow: 2px 5px 10px rgba(0,0,0,0.4);
     
 }
-
+.ctry{
+    margin-top:5%;
+    margin-bottom:5%;
+    color:black;
+    font-weight: 700;
+}
+.cap{
+    color:black;
+}
 
 @media only screen and (max-width: 600px) {
     #main{
