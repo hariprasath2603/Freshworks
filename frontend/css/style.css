@@ -62,6 +62,7 @@ cursor: pointer;
 }
 .card{
     display: inline-block;
+    animation: ani 0.4s ease-in;
     margin-top: 1%;
     margin-left:2%;
     margin-right:2%;
@@ -96,5 +97,18 @@ cursor: pointer;
 
     #query input[type="button"]{
         margin-top:2%;
+    }
+}
+
+
+
+@keyframes ani {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
