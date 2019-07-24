@@ -34,10 +34,16 @@ else{
 });
 
 app.get('/get/:id',(req,res)=>{
+    var now=new Date();
 var data= fs.readFileSync(dbPath);
 var jsondata=JSON.parse(data.toString());
 var key=req.params.id;
+
 if(jsondata.database[key]){
+   
+    if(jsondata.database[key][0]!= Infinity && jsondata.database[key][0]<now){
+        res.send("Time limit exeds");    
+    }else
     res.send(jsondata.database[key][1]);
 }
 else{
@@ -48,13 +54,18 @@ else{
 });
 
 app.get('/delete/:id',(req,res)=>{
+    var now = new Date();
     var data= fs.readFileSync(dbPath);
     var jsondata=JSON.parse(data.toString());
     var key=req.params.id;
     if(jsondata.database[key]){
+        if(jsondata.database[key][0]!= Infinity && jsondata.database[key][0]<now){
+            res.send("Time limit exeds");    
+        }else
+{    
         delete jsondata.database[key]
         fs.writeFileSync(dbPath,JSON.stringify(jsondata));
-        
+}       
         res.send("sucessfully deleted");
     }
     else{
@@ -63,16 +74,30 @@ app.get('/delete/:id',(req,res)=>{
     //console.log(jsondata.database["key1"]);
     
     });
+
+    app.get('/mad',(req,res)=>{
+           res.status(404).send("Key Not found");
+        console.log("hi")
+        //console.log(jsondata.database["key1"]);
+        
+        });
     
     
 
 
 app.post('/create',(req,res)=>{
-    
+    var now = new Date();
+    var jsondata={};
     var data= fs.readFileSync(dbPath);
-    var jsondata=JSON.parse(data.toString());
+    if(data.length==0){
+        jsondata["database"]={};
+    }
+    else{
+    jsondata=JSON.parse(data.toString());
+    }
     var body=req.body;
     //console.log(req);
+    
     if(sizeof(jsondata)>1000000000){
         res.send("Maximum size of database reached..");
     }
@@ -86,10 +111,11 @@ app.post('/create',(req,res)=>{
         
         else if(sizeof(body.value)<64000){
             if(body.ttl){
-                jsondata.database[body.key]=[body.ttl,body.value];
+                now.setSeconds(now.getSeconds()+body.ttl)
+                jsondata.database[body.key]=[now,body.value];
             }
             else{
-                jsondata.database[body.key]=[2000,body.value];
+                jsondata.database[body.key]=[Infinity,body.value];
             }
             
             
