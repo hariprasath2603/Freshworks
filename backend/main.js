@@ -1,13 +1,28 @@
 const express = require("express");
 var sizeof = require('object-sizeof')
-  
+var dbPath= "./db.json";
 var fs = require('fs');
 const app = express();
 
 app.use(express.json());
-//get all key pair values
+
+app.get('/setDBPath/:url',(req,res)=>{
+     if( fs.readFileSync(req.params.url))
+    {
+        dbPath=req.params.url;
+    res.send("Sucessfully updated");
+   
+    }
+    else{
+        res.status(404).send("Please give some valid path");
+        
+    } 
+       
+
+    });
+
 app.get('/get/all',(req,res)=>{
-var data= fs.readFileSync("./db.json");
+var data= fs.readFileSync(dbPath);
 var jsondata=JSON.parse(data.toString());
 if(jsondata.database){
     res.send(jsondata.database);
@@ -19,7 +34,7 @@ else{
 });
 
 app.get('/get/:id',(req,res)=>{
-var data= fs.readFileSync("./db.json");
+var data= fs.readFileSync(dbPath);
 var jsondata=JSON.parse(data.toString());
 var key=req.params.id;
 if(jsondata.database[key]){
@@ -33,12 +48,12 @@ else{
 });
 
 app.get('/delete/:id',(req,res)=>{
-    var data= fs.readFileSync("./db.json");
+    var data= fs.readFileSync(dbPath);
     var jsondata=JSON.parse(data.toString());
     var key=req.params.id;
     if(jsondata.database[key]){
         delete jsondata.database[key]
-        fs.writeFileSync("./db.json",JSON.stringify(jsondata));
+        fs.writeFileSync(dbPath,JSON.stringify(jsondata));
         
         res.send("sucessfully deleted");
     }
@@ -54,7 +69,7 @@ app.get('/delete/:id',(req,res)=>{
 
 app.post('/create',(req,res)=>{
     
-    var data= fs.readFileSync("./db.json");
+    var data= fs.readFileSync(dbPath);
     var jsondata=JSON.parse(data.toString());
     var body=req.body;
     //console.log(req);
@@ -78,7 +93,7 @@ app.post('/create',(req,res)=>{
             }
             
             
-            fs.writeFileSync("./db.json",JSON.stringify(jsondata));
+            fs.writeFileSync(dbPath,JSON.stringify(jsondata));
             res.send(jsondata);
         }
         else{
