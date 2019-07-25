@@ -1,5 +1,5 @@
 <h1>Frontend</h1>
-
+<p>To create frontend to fetch data from API and display information.</p>
 <h2>How to run</h2>
 <ul>
   <li>Simply download the repository and click on the index.html</li>
