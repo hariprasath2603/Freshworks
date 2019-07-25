@@ -22,7 +22,7 @@
  <p>Except create call all others are <code>GET</code> method. Create only <code>POST</code> method.
  If  insufficient data, calling expired key value, exidend limis of key and value then error is shown as 404. 
    
-<h2>Restriction on creatind data</h2>
+<h2>Restriction on creating data</h2>
 <ul>
 <li>Maximum sixze of database file - 1GB</li>
 <li>Maximum lenth of key - 32 characters</li>
