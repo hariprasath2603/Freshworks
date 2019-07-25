@@ -30,5 +30,5 @@ Fetch method was used to load the data from API's
 <ul>
 <li>Only HTML, CSS, JS was used.</li>
 <li>Responsiveness was also tested on various devices.</li>
-  <li>Documnets had line by line documentation</li>
+  <li>Documnets has line by line documentation please use that for detailed implementation</li>
 </ul>
