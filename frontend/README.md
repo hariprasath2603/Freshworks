@@ -4,11 +4,11 @@
 <ul>
   <li>Simply download the repository and click on the index.html</li>
   <li>On the search bar you can type the countries name.</li>
-  <li>If a contry name exist then or relative to the text you typed then list of card(s) was loaded.</li>
+  <li>If a country name  or relative to the text you have typed exist then list of card(s) was loaded.</li>
   <li>Click on the particular card so you are taken to the next page</li>
 </ul>
 
-<h2>Second pade(Detailed view)</h2>
+<h2>Second page(Detailed view)</h2>
 <p>This page shows some intresting and facts of the particular coutry. </p>
 <p>Info shown here are ...</p>
 <ul>
