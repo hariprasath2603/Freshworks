@@ -32,12 +32,17 @@
 <h2>Create data</h2>
 
 <p>Create data requires body data of specific format.
+  <pre>
 <code>
   {
   "key":"{your key}",
   "value":"{your value as JSON object}"
   "ttl":{int value}
   }
+  </pre>
  </code>
+ 
+ <li>ttl - is optional</li>
+ 
 </p>
 
