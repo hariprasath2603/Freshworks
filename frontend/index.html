@@ -11,27 +11,31 @@
     <link rel="stylesheet" href="./css/style.css">
     <!--adding external script-->
     <script src="./script/main.js"></script>
+
     <title>Frontend</title>
 </head>
 <body>
-              <div>
+              <div> <!-- logo for this page-->
                 <h1 id="logo">Country Index </h1>
               </div>
-    <div id="query">
+    <div id="query">  <!--searching compnent containes text box and button -->
          <input type="text" name="search" id="search" onkeydown="valueChange(this.value)" placeholder="Enter country name">
          <input type="button" value="SEARCH">
         </div>
 
+        <!--main core heart of the page-->
     <div id="main">
 
         <h2>LIST OF COUNTRIES</h2>
             <hr id="ruller">
-
-        <div id="cardcontainer">
-                                                                                                                                                                                                                                                   
-        </div>
+                <!--cards are created inside this cardcontainer-->
+                    <div id="cardcontainer">
+                                                                                                                                                                                                                                                            
+                    </div>
     </div>
+
     <script>
+        //initail liading of the cards before starting typing
     valueChange("a");
     </script>
 </body>

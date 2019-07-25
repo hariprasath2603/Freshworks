@@ -1,15 +1,17 @@
+/* This style page is for the first page herer named as index.html */
 *{
     margin:0;
     padding:0;
     font-family: 'Roboto', sans-serif;
     color:white;
 }
+/* for body seting background as crimson and adding some margins*/
 body{
     background-color: crimson;
     margin-left: 10%;
     margin-right: 10%;
 }
-
+/*here plain text is mimiced as logt font loded from google font*/
 #logo{
     font-family: 'Hanalei', cursive;
     letter-spacing: 5px;
@@ -20,17 +22,18 @@ body{
     margin-top:2%;
     text-align: center;
 }
-
+/*outer layer of searching compnents*/
 #query{
     width:100%;
     margin-top:5%;
     margin-bottom:5%;
     text-align: center;
 }
+/*only one heading denoting the "list of countries"*/
 h2{
     margin-bottom: 2%;
 }
-
+/*search bar*/
 #search{
     border:none;
     border-radius: 3px;
@@ -38,11 +41,12 @@ h2{
     color:black;
     width:80%;
 }
+/*adding margin to horizontal ruler */
 #ruller{
     margin-left:5%;
     margin-right:5%; 
 }
-
+/*changind button's default apperance */
 #query input[type="button"]{
 background-color:#00cc00;
 margin:none;
@@ -52,14 +56,17 @@ padding:10px;
 border:none;
 border-radius: 3px;
 }
+
 #query input[type="button"]:hover{
 box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
 cursor: pointer;
 }
+/*this is the outer layer of the country cards*/
 #cardcontainer{
     margin-top: 2%;
     text-align: center;
 }
+/*main card styling*/
 .card{
     display: inline-block;
     animation: ani 0.4s ease-in;
@@ -81,16 +88,18 @@ cursor: pointer;
 .card:hover{
     box-shadow: 2px 5px 20px rgba(255,255,255,0.4);
 }
+/*country name inside the  card*/
 .ctry{
     margin-top:5%;
     margin-bottom:5%;
     color:black;
     font-weight: 700;
 }
+/*country capital inside the card */
 .cap{
     color:black;
 }
-
+/*media query to make it as responsive*/
 @media only screen and (max-width: 600px) {
     #main{
     
@@ -107,7 +116,7 @@ cursor: pointer;
 }
 
 
-
+/* animation for the cards*/
 @keyframes ani {
     0% {
         opacity: 0;
