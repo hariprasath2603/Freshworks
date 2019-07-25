@@ -18,6 +18,8 @@
  <li><code>http://localhost:3000/get/all</code> - This is optional one i created this for testing purpose it respond with key-value pairs </li>
  <li><code>http://localhost:3000/delete/{your key value}</code> - replace your key here so it the coressponding key-value pair is deleted if it exist.</li>
  <li><code>http://localhost:3000/create/</code> - Add the data on request body in requested format so the value get inserted</li>
+  <li><code>http://localhost:3000//setDBPath/{Your db path}</code> - setting users file as database otherwise default <code>db.json</code> inside the package is taken as databaes.</li>
+  
  </ul>
  <p>Except create call all others are <code>GET</code> method. Create only <code>POST</code> method.
  If  insufficient data, calling expired key value, exidend limis of key and value then error is shown as 404. 
