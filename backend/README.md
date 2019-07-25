@@ -39,10 +39,15 @@
   "value":"{your value as JSON object}"
   "ttl":{int value}
   }
-  </pre>
- </code>
  
+ </code>
+  </pre>
  <li>ttl - is optional</li>
  
 </p>
+
+
+Data returend are in JSON format.
+Corresponding error was also handlde.
+Node Js itself Non-blocking of morethan one user can use this application.
 
