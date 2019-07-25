@@ -28,3 +28,16 @@
 <li>Maximum lenth of key - 32 characters</li>
 <li>Maximum size of value - 64 KB of JSON object</li>
 </ul>
+
+<h2>Create data</h2>
+
+<p>Create data requires body data of specific format.
+<code>
+  {
+  "key":"{your key}",
+  "value":"{your value as JSON object}"
+  "ttl":{int value}
+  }
+ </code>
+</p>
+
