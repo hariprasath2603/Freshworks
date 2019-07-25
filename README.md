@@ -7,4 +7,4 @@ Second round of freshworks
   <li>Backend</li>
 </ul>
 
-click on the corresponding folder to veiw it's documentation
+Click on the corresponding folder to veiw it's documentation
